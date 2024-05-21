@@ -18,7 +18,7 @@ export const DashboardSidebar: FC = function () {
 
   return (
     <Sidebar
-      aria-label="Sidebar with multi-level dropdown example"
+      aria-label="Sidebar"
       collapsed={isCollapsed}
       id="sidebar"
       className={twMerge(

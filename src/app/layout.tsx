@@ -5,6 +5,9 @@ import { Flowbite, ThemeModeScript } from "flowbite-react";
 import { twMerge } from "tailwind-merge";
 import { flowbiteTheme } from "./theme";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,6 +26,7 @@ export default function RootLayout({
         <ThemeModeScript />
         </head>
         <body className={twMerge("bg-gray-50 dark:bg-gray-900", inter.className)}>
+          <ToastContainer/>
         <Flowbite theme={{ theme: flowbiteTheme }}>{children}</Flowbite>
       </body></html>
   );

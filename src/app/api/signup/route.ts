@@ -2,10 +2,11 @@ import { createUser, findUserByEmail } from '@/app/lib/models/signup';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
-  const { fullName, email, password } = await req.json();
+  const payload = await req.json();
+ 
 
   try {
-    const newUser = await createUser(fullName, email, password);
+    const newUser = await createUser(payload.fullName, payload.email, payload.password);
     if (newUser) {    
       return NextResponse.json(newUser, { status: 201 });
     } else {
